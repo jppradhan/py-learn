@@ -57,41 +57,52 @@ print('3D volume: ', d3.get_volume())
 
 
 # inheritance multi level
-'''
-class A:
-    def feature1(self):
-        return 'feature 1'
+
+# class A:
+#     def feature1(self):
+#         return 'feature 1'
 
 
-class B(A):
-    def feature2(self):
-        return 'feature 2'
+# class B(A):
+#     def feature2(self):
+#         return 'feature 2'
 
 
-class C(B):
-    def feature3(self):
-        return 'feature 3'
+# class C(B):
+#     def feature3(self):
+#         return 'feature 3'
 
 
 # inheritance multiple
 
 
 class A:
+    def __init__(self):
+        print('inside A')
+
     def feature1(self):
         return 'feature 1'
 
 
 class B:
+    def __init__(self):
+        print('inside B')
+
     def feature2(self):
         return 'feature 2'
 
 
 class C(A, B):
+    def __init__(self):
+        super().__init__()
+
     def feature3(self):
         return 'feature 3'
-'''
 
-'''
+
+c = C()
+
+
 # nesting of classes
 class Student:
     # Class Attribute
@@ -114,9 +125,8 @@ s = Student(20)
 print('Student rank:', s.get_rank())
 print('Student computer:', s.computer.get_config())
 print('Student 2 computer:', Student(20).Computer().get_config())
-'''
 
-'''
+
 class Server:
     __domain = 'https://example.com'
 
@@ -131,11 +141,11 @@ class Server:
 
 print('Server OS: ', Server.get_domain())
 print('JAVA located at: ', Server.get_JAVA_PATH())
-'''
+
 
 # polymorphism
 # Dock typing
-'''
+
 print('############### polymorphism ###################')
 
 print('############### Dock typing ###################')
@@ -174,8 +184,8 @@ print('############### Operator overloading ###################')
 
 a = 10
 b = 20
-print(a + b)
-print(int.__add__(a, b))
+print('add: ', a + b)
+print('Add method', int.__add__(a, b))
 
 rect1 = Rectangle(10, 20)
 rect2 = Rectangle(20, 30)
@@ -185,10 +195,10 @@ print('New rect y: ', rect3.get_y())
 
 print('############### Method overloading ###################')
 print('############### Not present in python ###################')
-'''
+
 
 # Abstract class
-'''
+
 print("Abstract class")
 print("cannot create instance")
 print("python does not support")
@@ -217,4 +227,3 @@ class Car(Vehicle):
 car = Car()
 print('Car wheels: ', car.get_wheels())
 print('Car wheels: ', car.get_model())
-'''
